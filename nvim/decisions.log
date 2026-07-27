@@ -1,0 +1,21 @@
+2026-07-26T00:00:00Z [DECISION] Initialized config with init.lua and module structure: core/options.lua, core/keymaps.lua, core/autocmds.lua, plugins/init.lua
+2026-07-26T00:00:00Z [DECISION] Set <Space> as mapleader, \ as maplocalleader
+2026-07-26T00:00:00Z [DECISION] Chose lazy.nvim as plugin manager with auto-bootstrap on first launch
+2026-07-26T00:00:00Z [DECISION] Decision log format: ISO 8601 UTC timestamps in decisions.log
+2026-07-26T00:00:00Z [DECISION] Chose fzf-lua (ibhagwan/fzf-lua) for file and buffer search over fzf.vim
+2026-07-26T00:00:00Z [DECISION] Cmd+P/Cmd+Q approach abandoned — macOS/WezTerm interception made it unreliable; reverted to Ctrl+P (file search) and Ctrl+Q (buffer search)
+2026-07-26T00:00:00Z [DECISION] Installed fzf 0.74.1 via Homebrew (system dependency for fzf-lua)
+2026-07-26T00:00:00Z [DECISION] Enabled absolute and relative line numbers
+2026-07-26T00:00:00Z [DECISION] Chose neo-tree.nvim (v3.x) for file tree over nvim-tree.lua — more feature-rich and actively maintained
+2026-07-26T00:00:00Z [DECISION] Added <C-h>/<C-j>/<C-k>/<C-l> for window navigation — used to move between neo-tree and file buffers
+2026-07-26T00:00:00Z [DECISION] Added gitsigns.nvim for gutter indicators (added/changed/deleted lines) and inline hunk diff preview via <leader>gd
+2026-07-27T00:00:00Z [DECISION] Enabled inline git blame virtual text (300ms delay) and <leader>gb for full commit message float; PR details not available in gitsigns
+2026-07-27T00:00:00Z [DECISION] Chose kanagawa.nvim (rebelot/kanagawa.nvim) as colorscheme; git hunk colors overridden with protanopia/deuteranopia-safe palette — added: #0072B2 (blue), changed: #E69F00 (orange), removed: #D55E00 (vermilion)
+2026-07-27T00:00:00Z [DECISION] Fixed gitsigns hunk colors — kanagawa's colors.theme.all.git does not set gitsigns highlights; must use kanagawa overrides() to set GitSignsAdd/Change/Delete directly
+2026-07-28T00:00:00Z [DECISION] Added lualine.nvim for statusline; shows branch name, * for uncommitted changes, ↑N for commits to push, ↓N for commits to pull via custom components
+2026-07-28T00:00:00Z [DECISION] Chose toggleterm.nvim over snacks.nvim for coding agent integration — single-purpose, non-conflicting with existing setup; snacks.nvim rejected for being a kitchen-sink plugin that would overlap fzf-lua and gitsigns
+2026-07-28T00:00:00Z [DECISION] Added named float terminals for Claude Code (<leader>ac), Codex (<leader>ax), OpenCode (<leader>ao); <leader>as sends visual selection to active agent terminal
+2026-07-28T00:00:00Z [DECISION] Changed agent terminals from float to vertical split (40% screen width) so agents are visible alongside the file
+2026-07-28T00:00:00Z [DECISION] Added <Esc><Esc> to exit terminal mode (<C-\><C-n>) — single Esc intentionally passes through to the agent
+2026-07-28T00:00:00Z [DECISION] Rejected <C-[> and <C-]> for split resizing — <C-[> is equivalent to Escape in terminals; chose <C-,> (shrink) and <C-.> (grow) instead, step size changed to 1 column
+2026-07-26T00:00:00Z [DECISION] Rejected which-key.nvim for keybinding hints — visually jarring; using ? inside neo-tree instead
