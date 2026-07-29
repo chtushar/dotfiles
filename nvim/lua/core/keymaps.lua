@@ -9,6 +9,7 @@ map("n", "<C-q>", "<cmd>FzfLua buffers<cr>", { desc = "Find buffers" })
 
 -- neo-tree
 map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle file tree" })
+map("n", "<leader>gt", "<cmd>Neotree float git_status<cr>", { desc = "Git changed files" })
 
 -- gitsigns
 map("n", "<leader>gd", "<cmd>Gitsigns preview_hunk<cr>", { desc = "Preview git hunk diff" })

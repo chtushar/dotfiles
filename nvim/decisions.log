@@ -18,4 +18,7 @@
 2026-07-28T00:00:00Z [DECISION] Changed agent terminals from float to vertical split (40% screen width) so agents are visible alongside the file
 2026-07-28T00:00:00Z [DECISION] Added <Esc><Esc> to exit terminal mode (<C-\><C-n>) — single Esc intentionally passes through to the agent
 2026-07-28T00:00:00Z [DECISION] Rejected <C-[> and <C-]> for split resizing — <C-[> is equivalent to Escape in terminals; chose <C-,> (shrink) and <C-.> (grow) instead, step size changed to 1 column
+2026-07-30T00:00:00Z [DECISION] Added <leader>gt to open neo-tree git status float showing only changed files
+2026-07-30T00:00:00Z [DECISION] Fixed hunk preview diff colors — GitSignsAdd/Change/Delete only affect gutter; added GitSignsAddLn/DeleteLn for line backgrounds and GitSignsAddInline/DeleteInline/ChangeInline for word diffs
+2026-07-30T00:00:00Z [DECISION] Neo-tree git status keybindings: ga=stage file, gu=unstage file, A=stage all; 'a' is reserved for new file/folder creation and cannot be used for staging
 2026-07-26T00:00:00Z [DECISION] Rejected which-key.nvim for keybinding hints — visually jarring; using ? inside neo-tree instead
