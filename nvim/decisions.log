@@ -22,3 +22,4 @@
 2026-07-30T00:00:00Z [DECISION] Fixed hunk preview diff colors — GitSignsAdd/Change/Delete only affect gutter; added GitSignsAddLn/DeleteLn for line backgrounds and GitSignsAddInline/DeleteInline/ChangeInline for word diffs
 2026-07-30T00:00:00Z [DECISION] Neo-tree git status keybindings: ga=stage file, gu=unstage file, A=stage all; 'a' is reserved for new file/folder creation and cannot be used for staging
 2026-07-26T00:00:00Z [DECISION] Rejected which-key.nvim for keybinding hints — visually jarring; using ? inside neo-tree instead
+2026-07-30T00:00:00Z [DECISION] Claude Code terminal (<leader>ac) launches with --dangerously-skip-permissions — accepts blanket permission bypass in exchange for no prompts in the float

@@ -13,7 +13,7 @@ return {
 
         local Terminal = require("toggleterm.terminal").Terminal
 
-        local claude = Terminal:new({ cmd = "claude", hidden = true, direction = "vertical" })
+        local claude = Terminal:new({ cmd = "claude --dangerously-skip-permissions", hidden = true, direction = "vertical" })
         local codex = Terminal:new({ cmd = "codex", hidden = true, direction = "vertical" })
         local opencode = Terminal:new({ cmd = "opencode", hidden = true, direction = "vertical" })
 
