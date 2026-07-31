@@ -1,0 +1,2 @@
+# Option must act as Alt so <M-hjkl> reaches Herdr/Neovim (herdr-splits resize).
+macos-option-as-alt = true
