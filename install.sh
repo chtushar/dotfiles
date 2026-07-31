@@ -32,6 +32,7 @@ link() {
 }
 
 brew install fzf herdr
+herdr plugin install lmilojevicc/herdr-splits.nvim
 
 link "$DOTFILES/nvim" "$CONFIG/nvim"
 link "$DOTFILES/ghostty" "$CONFIG/ghostty"
