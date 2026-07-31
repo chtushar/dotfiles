@@ -31,6 +31,8 @@ link() {
     echo "link    $dest -> $src"
 }
 
+brew install fzf herdr
+
 link "$DOTFILES/nvim" "$CONFIG/nvim"
 link "$DOTFILES/ghostty" "$CONFIG/ghostty"
 
