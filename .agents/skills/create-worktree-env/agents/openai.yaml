@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Worktree with Env"
+  short_description: "Create worktrees and safely link local env files"
+  default_prompt: "Use $create-worktree-env to create an isolated Git worktree and link its local environment files."

@@ -1,11 +1,18 @@
 # dotfiles
 
-Configs for Neovim, [Herdr](https://herdr.dev), and [Ghostty](https://ghostty.org).
+Configs for Neovim, [Herdr](https://herdr.dev),
+[Ghostty](https://ghostty.org), and portable Agent Skills.
 
 ```
 nvim/     -> ~/.config/nvim          (symlinked directory)
 ghostty/  -> ~/.config/ghostty       (symlinked directory)
 herdr/    -> ~/.config/herdr/config.toml only
+.agents/skills/create-worktree-env/
+           -> ~/.agents/skills/create-worktree-env
+           -> ~/.config/agents/skills/create-worktree-env
+           -> ${CLAUDE_CONFIG_DIR:-~/.claude}/skills/create-worktree-env
+           -> ${CODEX_HOME:-~/.codex}/skills/create-worktree-env
+           -> ~/.config/opencode/skills/create-worktree-env
 ```
 
 ## Setup
@@ -21,6 +28,15 @@ backs up anything it would otherwise overwrite as `<name>.backup.<timestamp>`.
 Only `config.toml` is symlinked for Herdr: the rest of `~/.config/herdr` is
 runtime state (sockets, logs, `session.json`, installed plugin checkouts) that
 does not belong in version control.
+
+Skills use the open Agent Skills `SKILL.md` format and live under the neutral
+`.agents/skills` convention. They are linked individually, so built-in and
+separately installed skills remain untouched. To expose them globally to every
+client supported by the [Skills CLI](https://github.com/vercel-labs/skills), run:
+
+```bash
+npx skills add ~/dotfiles --global --all
+```
 
 ## Dependencies
 
