@@ -7,12 +7,14 @@ Configs for Neovim, [Herdr](https://herdr.dev),
 nvim/     -> ~/.config/nvim          (symlinked directory)
 ghostty/  -> ~/.config/ghostty       (symlinked directory)
 herdr/    -> ~/.config/herdr/config.toml only
-.agents/skills/create-worktree-env/
-           -> ~/.agents/skills/create-worktree-env
-           -> ~/.config/agents/skills/create-worktree-env
-           -> ${CLAUDE_CONFIG_DIR:-~/.claude}/skills/create-worktree-env
-           -> ${CODEX_HOME:-~/.codex}/skills/create-worktree-env
-           -> ~/.config/opencode/skills/create-worktree-env
+.agents/skills/
+  create-worktree-env/  personal worktree + env-linking skill
+  herdr/                Herdr v0.8.0 control skill
+           -> ~/.agents/skills/<name>
+           -> ~/.config/agents/skills/<name>
+           -> ${CLAUDE_CONFIG_DIR:-~/.claude}/skills/<name>
+           -> ${CODEX_HOME:-~/.codex}/skills/<name>
+           -> ~/.config/opencode/skills/<name>
 ```
 
 ## Setup

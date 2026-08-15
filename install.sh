@@ -44,13 +44,15 @@ link "$DOTFILES/ghostty" "$CONFIG/ghostty"
 mkdir -p "$CONFIG/herdr"
 link "$DOTFILES/herdr/config.toml" "$CONFIG/herdr/config.toml"
 
-# Keep one agent-neutral skill implementation and expose it through the global
-# locations used by the universal Agent Skills convention and our primary
-# clients. Other Agent Skills-compatible clients can install the same source
+# Keep one agent-neutral implementation of each personal skill and expose it
+# through the global locations used by the universal Agent Skills convention
+# and our primary clients. Other compatible clients can install the same source
 # with: npx skills add "$DOTFILES" --global --all
-SKILL="$DOTFILES/.agents/skills/create-worktree-env"
-link "$SKILL" "$HOME/.agents/skills/create-worktree-env"
-link "$SKILL" "$CONFIG/agents/skills/create-worktree-env"
-link "$SKILL" "$CLAUDE/skills/create-worktree-env"
-link "$SKILL" "$CODEX/skills/create-worktree-env"
-link "$SKILL" "$CONFIG/opencode/skills/create-worktree-env"
+for skill_name in create-worktree-env herdr; do
+    skill="$DOTFILES/.agents/skills/$skill_name"
+    link "$skill" "$HOME/.agents/skills/$skill_name"
+    link "$skill" "$CONFIG/agents/skills/$skill_name"
+    link "$skill" "$CLAUDE/skills/$skill_name"
+    link "$skill" "$CODEX/skills/$skill_name"
+    link "$skill" "$CONFIG/opencode/skills/$skill_name"
+done
