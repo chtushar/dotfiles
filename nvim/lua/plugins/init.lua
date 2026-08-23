@@ -18,6 +18,7 @@ require("lazy").setup({
         { import = "plugins.fzf" },
         { import = "plugins.neotree" },
         { import = "plugins.gitsigns" },
+        { import = "plugins.diffview" },
         { import = "plugins.colorscheme" },
         { import = "plugins.lualine" },
         { import = "plugins.toggleterm" },

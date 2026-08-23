@@ -1,3 +1,4 @@
+onboarding = false
 # herdr-splits: forward nav/resize chords to Neovim when the focused pane runs
 # it, otherwise move/resize Herdr panes.
 
