@@ -35,6 +35,7 @@ link() {
 
 brew install fzf herdr || true
 herdr plugin install lmilojevicc/herdr-splits.nvim --yes || true
+herdr plugin install ChmaraX/herdr-nvim --yes || true
 
 link "$DOTFILES/nvim" "$CONFIG/nvim"
 link "$DOTFILES/ghostty" "$CONFIG/ghostty"

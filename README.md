@@ -47,6 +47,7 @@ npx skills add ~/dotfiles --global --all
 | [fzf](https://github.com/junegunn/fzf) | fzf-lua file/buffer search | `brew install fzf` |
 | [Herdr](https://herdr.dev) ≥ 0.7.0 | terminal multiplexer; plugin actions | `brew install herdr` |
 | herdr-splits (Herdr plugin) | Herdr side of the split navigation | `herdr plugin install lmilojevicc/herdr-splits.nvim` |
+| herdr-nvim (Herdr plugin) | Persistent Neovim sidebar, touched-file picker, and annotations | `herdr plugin install ChmaraX/herdr-nvim` |
 
 Neovim plugins bootstrap themselves — lazy.nvim installs itself on first launch
 and pins versions from `nvim/lazy-lock.json`.
@@ -67,6 +68,8 @@ Leader is `<Space>`, local leader is `\`.
 | `<M-h/j/k/l>` | Resize window or Herdr pane |
 | `<C-,>` / `<C-.>` | Shrink / grow split width by 1 column |
 | `<leader>e` | Toggle file tree |
+| `prefix+e` | Toggle the persistent Neovim sidebar in Herdr |
+| `prefix+o` | Pick a file recently touched by the active agent |
 
 ### Git
 
@@ -86,6 +89,10 @@ Inside the git status tree: `ga` stage file, `gu` unstage file, `A` stage all.
 | `<leader>ax` | Toggle Codex |
 | `<leader>ao` | Toggle OpenCode |
 | `<leader>as` | Send visual selection to active agent |
+| `<leader>rc` | Annotate the current line or visual selection |
+| `<leader>rl` | List pending annotations |
+| `<leader>rs` | Paste annotations into an agent input |
+| `<leader>rS` | Send annotations to an agent |
 | `<Esc><Esc>` | Exit terminal mode (single `<Esc>` passes through to the agent) |
 
 ## Notes

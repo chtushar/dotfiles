@@ -1,4 +1,18 @@
 onboarding = false
+# herdr-nvim: persistent Neovim sidebar and agent-touched file picker.
+
+[[keys.command]]
+key = "prefix+e"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.toggle"
+description = "Toggle Neovim sidebar"
+
+[[keys.command]]
+key = "prefix+o"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.pick-file"
+description = "Open agent-touched file"
+
 # herdr-splits: forward nav/resize chords to Neovim when the focused pane runs
 # it, otherwise move/resize Herdr panes.
 

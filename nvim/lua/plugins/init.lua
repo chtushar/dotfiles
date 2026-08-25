@@ -23,5 +23,6 @@ require("lazy").setup({
         { import = "plugins.lualine" },
         { import = "plugins.toggleterm" },
         { import = "plugins.herdr-splits" },
+        { import = "plugins.herdr-nvim" },
     },
 })

@@ -36,3 +36,5 @@
 2026-07-31T00:00:00Z [DECISION] Kept decisions.log at nvim/decisions.log rather than moving to repo root, though it now covers repo-wide decisions
 2026-07-31T00:00:00Z [DECISION] Added brew install fzf and herdr to install.sh so dependencies are set up automatically alongside symlinks
 2026-07-31T00:00:00Z [DECISION] Fixed install.sh — brew install exits non-zero when already installed (use || true); herdr plugin install needs --yes for non-interactive mode
+2026-08-25T00:00:00Z [DECISION] Added ChmaraX/herdr-nvim for its persistent per-tab Neovim sidebar, agent-touched file picker, and annotations; kept herdr-splits.nvim because it provides the separate cross-pane navigation/resizing behavior
+2026-08-25T00:00:00Z [DECISION] Configured herdr-nvim annotations under <leader>r instead of the default <leader>a because <leader>ac/<leader>as are already used by toggleterm agent workflows
