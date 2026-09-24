@@ -7,6 +7,7 @@ Configs for Neovim, [Herdr](https://herdr.dev),
 nvim/     -> ~/.config/nvim          (symlinked directory)
 ghostty/  -> ~/.config/ghostty       (symlinked directory)
 herdr/    -> ~/.config/herdr/config.toml only
+  plugins/worktree-env/ local Herdr plugin (registered with `herdr plugin link`)
 .agents/skills/
   create-worktree-env/  personal worktree + env-linking skill
   herdr/                Herdr v0.8.0 control skill
@@ -48,6 +49,8 @@ npx skills add ~/dotfiles --global --all
 | [Herdr](https://herdr.dev) ≥ 0.7.0 | terminal multiplexer; plugin actions | `brew install herdr` |
 | herdr-splits (Herdr plugin) | Herdr side of the split navigation | `herdr plugin install lmilojevicc/herdr-splits.nvim` |
 | herdr-nvim (Herdr plugin) | Persistent Neovim sidebar, touched-file picker, and annotations | `herdr plugin install ChmaraX/herdr-nvim` |
+| worktree-env (local Herdr plugin) | Symlinks `.local.env`, `.env`, `.env.local`, `.dev.vars` into new Herdr worktrees | `herdr plugin link ~/dotfiles/herdr/plugins/worktree-env` |
+| [jq](https://jqlang.org) | worktree-env reads the event payload | ships with macOS 15+ |
 
 Neovim plugins bootstrap themselves — lazy.nvim installs itself on first launch
 and pins versions from `nvim/lazy-lock.json`.

@@ -37,3 +37,5 @@ Use the bundled script for deterministic worktree creation and environment-file 
 ## Script
 
 Read `scripts/create-worktree-with-env.sh --help` for all options. The script supports new and existing branches and a dry-run mode.
+
+To link env files into a worktree that already exists, run `scripts/link-worktree-env.sh --target <path>`. The source defaults to the repository's main worktree. The Herdr `worktree-env` plugin runs this same script on `worktree.created`.

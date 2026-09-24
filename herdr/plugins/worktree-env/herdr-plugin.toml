@@ -1,0 +1,10 @@
+id = "dotfiles.worktree-env"
+name = "Worktree Env"
+version = "0.1.0"
+min_herdr_version = "0.8.0"
+description = "Symlink local env files into worktrees Herdr creates"
+platforms = ["linux", "macos"]
+
+[[events]]
+on = "worktree.created"
+command = ["bash", "on-worktree-created.sh"]

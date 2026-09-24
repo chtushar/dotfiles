@@ -2,7 +2,6 @@
 
 set -euo pipefail
 
-ENV_NAMES=(.local.env .env .env.local .dev.vars)
 
 usage() {
   cat <<'EOF'
@@ -134,36 +133,8 @@ else
   "${worktree_command[@]}"
 fi
 
-linked=0
-conflicts=0
-
-while IFS= read -r -d '' source_file; do
-  relative_path=${source_file#"$source_root"/}
-  destination=$target_path/$relative_path
-
-  if [[ -e "$destination" || -L "$destination" ]]; then
-    printf 'conflict: destination exists, not replaced: %s\n' "$destination" >&2
-    conflicts=$((conflicts + 1))
-    continue
-  fi
-
-  if [[ "$dry_run" == true ]]; then
-    printf 'Would link: %s -> %s\n' "$destination" "$source_file"
-  else
-    mkdir -p "$(dirname "$destination")"
-    ln -s "$source_file" "$destination"
-    printf 'Linked: %s -> %s\n' "$destination" "$source_file"
-  fi
-  linked=$((linked + 1))
-done < <(
-  find "$source_root" \
-    \( -path "$source_root/.git" -o -path '*/node_modules' -o -path '*/.pnpm-store' \) -prune -o \
-    \( -type f -o -type l \) \
-    \( -name "${ENV_NAMES[0]}" -o -name "${ENV_NAMES[1]}" -o -name "${ENV_NAMES[2]}" -o -name "${ENV_NAMES[3]}" \) \
-    -print0
-)
-
-printf 'Environment links: %d created, %d conflict(s)\n' "$linked" "$conflicts"
-if ((conflicts > 0)); then
-  exit 2
+link_command=("$(dirname "${BASH_SOURCE[0]}")/link-worktree-env.sh" --source "$source_root" --target "$target_path")
+if [[ "$dry_run" == true ]]; then
+  link_command+=(--dry-run)
 fi
+exec "${link_command[@]}"

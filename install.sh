@@ -45,6 +45,10 @@ link "$DOTFILES/ghostty" "$CONFIG/ghostty"
 mkdir -p "$CONFIG/herdr"
 link "$DOTFILES/herdr/config.toml" "$CONFIG/herdr/config.toml"
 
+# Local plugin: symlink env files into every worktree Herdr creates, using the
+# same linker as the create-worktree-env skill below.
+herdr plugin link "$DOTFILES/herdr/plugins/worktree-env" || true
+
 # Keep one agent-neutral implementation of each personal skill and expose it
 # through the global locations used by the universal Agent Skills convention
 # and our primary clients. Other compatible clients can install the same source
